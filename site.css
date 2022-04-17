@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,600");
+* {
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: rgb(8, 8, 8);
+  font-size: 1.1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #0f9;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  /* outline: 3px solid #0f9;
+  outline-offset: 0.25em; */
+  border: 3px solid gold;
+  display: inline-block;
+  margin: 0.25em 0 0.5em;
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 0 -1rem blue, 0 3rem 0 -2rem red, 0 4.5rem 0 -3rem purple;
+}
+h1 span {
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5em;
+}
+h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+p span {
+  color: #0f9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7em 1.7em;
+  background: #0f9;
+  color: #444;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.btn:hover {
+  background: #00cc7a;
+}
+.container {
+  margin: 5px;
+  padding: 2vh 0;
+}
+pre {
+  /* box-shadow: 0 1.5rem 0 -1rem blueviolet, 0 3rem 0 -2rem tomato; */
+  box-shadow: 0 0 1rem 0 rgb(150, 104, 4);
+  background-color: #020202;
+}
+pre[class*="language-"] {
+  background: #020202 !important;
+}
+.hero {
+  text-align: center;
+  position: relative;
+  background-color: rgb(19, 18, 18);
+  height: 100vh;
+  padding: 0em;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 1rem 0 -1rem tomato;
+}
+.hero::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  display: block;
+  background-image: url(img/familytree.jpg);
+  background-blend-mode: multiply;
+  background-size: cover;
+  height: 100vh;
+  opacity: 0.3;
+}
+
+.steps {
+  text-align: center;
+  display: column;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.fa-solid,
+.fa-regular {
+  color: gold;
+}
+@media (min-width: 40rem) {
+  .steps {
+    flex-direction: column;
+  }
+}
+.step {
+  flex-basis: 30%;
+}
+.scroll {
+  position: absolute;
+  top: 500px;
+}
+.chevron {
+  position: relative;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #fff;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.text {
+  display: block;
+  margin-top: 75px;
+  margin-left: -30px;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.25;
+  animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
+.cta {
+  background-image: url(https://picsum.photos/id/114/3264/2448);
+  background-size: cover;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 80px;
+}
+
+.code-inst {
+  color: rgb(247, 243, 243);
+  background-color: #020202;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+.req {
+  color: tomato;
+  font-style: italic;
+}
+
+.card {
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-column: auto;
+  grid-template-columns: 200px auto;
+  gap: 50px 50px;
+  padding: 1.5rem;
+  margin: 10px;
+}
+.card-text {
+  padding: 2px 16px;
+  line-height: 1;
+}
+.card img {
+  border-radius: 10px;
+}

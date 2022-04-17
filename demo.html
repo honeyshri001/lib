@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.::Family Tree::.</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="../lineage.js"></script>
+    <script>
+        var jsonData = [
+            { "id": 1, "pid": 2, "gender": "male", "title": "Title", "name": "Father", "photo": "", "loc": "NY USA" },
+            { "id": 2, "pid": 1, "gender": "female", "title": "Title", "name": "Mother", "photo": "", "loc": "NY USA" },
+            { "id": 3, "pid": 4, "mid": 2, "fid": 1, "gender": "female", "title": "Title", "name": "Daughter", "photo": "//unsplash.it/80/80", "loc": "USA" },
+            { "id": 4, "pid": 3, "gender": "male", "title": "Title", "name": "Son-in-Law", "photo": "", "loc": "IND" },
+        ];
+    </script>
+</head>
+
+<body>
+    <div id="divFamily"></div>
+    <script>
+        var params = {
+            data: jsonData,
+            search: true,
+            container: "divFamily",
+            template: "circle" // "rounded" // "raised" // "tilted"
+        };
+        var tree = new Lineage(params);
+        tree.load();
+
+    </script>
+</body>
+
+</html>

@@ -5,31 +5,133 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.::Family Tree :.</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="lineage.min.js"></script>
-
+    <title>Build Family Tree</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-tomorrow.min.css"
+        integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/34af8a80dc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="divFamily"></div>
     <script>
-        var jsonData = [
-            { "id": 1, "pid": 2, "gender": "male", "title": "", "name": "John Doe", "photo": "", "loc": "NY USA" },
-            { "id": 2, "pid": 1, "gender": "female", "title": "", "name": "Carla", "photo": "", "loc": "NY USA" }
-        ];
-        var params = {
-            data: "sampledata.json",
-            //data: jsonData,
-            //data: "../newdata.json",
-            search: true,
-            container: "divFamily",
-            template: "circle"
-        };
-        var tree = new Lineage(params);
-        tree.load();
-
+        window.Prism = window.Prism || {};
+        window.Prism.manual = false;
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"
+        integrity="sha512-/Swpp6aCQ0smuZ+zpklJqMClcUlvxhpLf9aAcM7JjJrj2waCU4dikm3biOtMVAflOOeniW9qzaNXNrbOAOWFCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div class="container">
+        <div class="hero">
+            <p></span>Build your</span></p>
+            <h1> Family Tree<br /> <img class="syn" src="img/synonym-blk.jpg" /></h1>
+            <p>With <strong>3 Simple</strong> steps</p>
+
+            <div class="scroll">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <span class="text">Scroll down</span>
+            </div>
+
+        </div>
+        <div class="steps">
+            <div class="step">
+                <h2>Step 1: Add below script to your <strong>&lt;Head&gt;</strong> tag</h2>
+                <pre
+                    class="language-markup"><code >&lt;script src="https://shrihari-lib.netlify.app/lineage.min.js"/&gt;</code></pre>
+            </div>
+            <div class="step">
+                <h2>Step 2: Prepare the family Data</h2>
+                <pre class="language-javascript"><code>
+        var jsonData = [
+        { "id": 1, "pid": 2, "gender": "male", "title": "Title", "name": "Father", "photo": "", "loc": "NY USA" },
+        { "id": 2, "pid": 1, "gender": "female", "title": "Title", "name": "Mother", "photo": "", "loc": "NY USA" },
+        { "id": 3, "pid": 4, "mid": 2, "fid": 1, "gender": "female", "title": "Title", "name": "Daughter",
+         "photo": "//unsplash.it/80/80", "loc": "USA" },
+        { "id": 4, "pid": 3, "gender": "male", "title": "Title", "name": "Son-in-Law","photo": "", "loc": "IND" },
+        ];</code></pre>
+
+            </div>
+            <div class="step">
+                <h3>Here are the details of Data</h3>
+                <pre class="code-inst"><code>
+                id <i class="fa-solid fa-arrow-right"></i> identification - unique - <span class="req">required</span>
+                gender <i class="fa-solid fa-arrow-right"></i> male / female - <span class="req">required</span>
+                name <i class="fa-solid fa-arrow-right"></i> name of family member - <span class="req">required</span>
+                title <i class="fa-solid fa-arrow-right"></i> family name - optional
+                photo <i class="fa-solid fa-arrow-right"></i> photo url (local / web) - optional
+                loc <i class="fa-solid fa-arrow-right"></i> address, if you have USA or IND in address it will be replaced by country flags.
+                        (other countries <i class="fa-solid fa-person-walking-luggage fa-lg" style="color:greenyellow"></i> coming soon)
+                pid <i class="fa-solid fa-arrow-right"></i> partner id  - (optional) *
+                mid <i class="fa-solid fa-arrow-right"></i> mother id - (optional) *
+                fid <i class="fa-solid fa-arrow-right"></i> father id - (optional) *
+                * keep note one of these are <span class="req">required</span>
+                  partner(pid) or parents(mid, fid) to generate the family Tree
+                </code></pre>
+            </div>
+            <div class="step">
+                <h2>Step 3 : Add before <strong>&lt;/Body&gt;</strong></h2>
+                <pre class="language-markup">
+                <code>&lt;body&gt;
+                     &lt;div id="divFamily"&gt;&lt;/div&gt;
+                        &lt;script&gt;
+                            var params = {
+                                data: jsonData, /*Local variable or file path*/
+                                search: true, //false
+                                container: "divFamily",
+                                template: "circle" // "rounded" // "raised" // "tilted"
+                            };
+                            var tree = new Lineage(params);
+                            tree.load();
+                        &lt;/script&gt;
+                    &lt;/body&gt;</code></pre>
+            </div>
+        </div>
+
+
+        <div class="cta">
+            <div class="cta-text">
+                <h2>Features</h2>
+                <div class="card">
+                    <img src="img/search.png" alt="search">
+                    <div class="card-text">
+                        <h4><b>Search</b></h4>
+                        <p>Search any family member with photo</p>
+                        <p>select and see the decendends (if any)</p>
+                        <p>Enable / Disable by setting true/false in params</p>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/node.png" alt="node">
+                    <div class="card-text">
+                        <h4><b>Click on Member</b></h4>
+                        <p>To see the bloodline (if any)</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src="img/nodeabove.png" alt="Avatar"><br />
+                        <img src="img/nodeabove2.png" alt="Avatar">
+                    </div>
+                    <div class="card-text">
+                        <h4><b>Lineage</b></h4>
+                        <p>When you see this icon it means this member has family members above.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <a href="demo.html" target="_blank" class="btn" style="width: 140px;">Demo <i
+                            class="fa-solid fa-arrow-up-right-from-square" style="color:darkblue"></i></a>
+                    <div class="card-text">
+                        <h4><b>Have Questions ?</b></h4>
+                        <p>send your queries to <a href="mailto:reachme@sridhar.ch">reachme@sridhar.ch</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

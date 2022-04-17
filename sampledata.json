@@ -3,7 +3,7 @@
     { "id": 2, "pid": 1, "gender": "female", "title":"Mangalampally", "name": "Rama Lakshmi (Yamini)" , "photo":"https://srinivasasridhar.github.io/KothapallyFamilyTree/images/ramalakshmi.jpg","loc": "RIP"},
 
     {"id": 3,"pid": 4,"mid": 2,"fid": 1,"gender": "female", "title":"Kothapally","name": "Kanaka Durga", "photo":"https://srinivasasridhar.github.io/KothapallyFamilyTree/images/durga.jpg","loc": "RIP" },
-    {"id": 4,"pid": 3,"mid":6,"fid":5,"gender": "male","title":"Kothapally","name": "Gopla Krishna Murhty", "photo":"https://srinivasasridhar.github.io/KothapallyFamilyTree/images/gopala.jpg","loc": "RIP"},
+    {"id": 4,"pid": 3,"mid":6,"fid":5,"gender": "male","title":"Kothapally","name": "Gopla Krishna Murhty", "photo":"https://srinivasasridhar.github.io/KothapallyFamilyTree/images/gopala.jpg","loc": "RIP","me":"yes"},
     
     {"id": 5,"pid": 6,"gender": "male", "title":"something","name": "Father of Murhty", "photo":"","loc": "RIP" },
     {"id": 6,"pid": 5, "gender": "female", "title":"Something","name": "Mother of Murhty", "photo":"","loc": "RIP" }
