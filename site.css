@@ -241,8 +241,21 @@ a {
   }
 }
 .cta {
-  background-image: url(https://picsum.photos/id/114/3264/2448);
-  background-size: cover;
+  background: rgb(32, 32, 32);
+
+  background: linear-gradient(90deg, rgb(39, 39, 38) 0%, rgb(80, 79, 78) 100%);
+
+  background: -moz-linear-gradient(
+    90deg,
+    rgb(39, 39, 38) 0%,
+    rgb(80, 79, 78) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    rgb(39, 39, 38) 0%,
+    rgb(80, 79, 78) 100%
+  );
   padding: 10px;
   color: #fff;
   display: flex;
