@@ -26,7 +26,8 @@ h1 {
   display: inline-block;
   margin: 0.25em 0 0.5em;
   border-radius: 5px;
-  box-shadow: 0 1.5rem 0 -1rem blue, 0 3rem 0 -2rem red, 0 4.5rem 0 -3rem purple;
+  box-shadow: 0 1.5rem 0 -1rem blue, 0 3rem 0 -2rem tomato,
+    0 4.5rem 0 -3rem purple;
   background-color: #1f2020;
 }
 
@@ -43,8 +44,9 @@ h4 {
   margin-bottom: 0.5em;
 }
 p span {
-  color: goldenrod;
   font-size: 2rem;
+  color: tomato;
+  font-weight: bolder;
 }
 
 .btn {
@@ -107,7 +109,7 @@ pre[class*="language-"] {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  box-shadow: 0 1rem 0 -1rem tomato;
+  box-shadow: 0 0 2rem 0 rgb(150, 104, 4);
   background-image: url(https://picsum.photos/id/1018/3264/2448);
   background-size: cover;
 }
@@ -126,7 +128,11 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+a {
+  color: rgb(97, 23, 216);
+  text-decoration: underline;
+  font-weight: 800;
+}
 /* On screens that are 992px or less */
 @media screen and (max-width: 992px) {
   body {

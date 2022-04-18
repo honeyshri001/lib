@@ -47,11 +47,11 @@
                 <pre class="language-javascript">
 <code>
 var jsonData = [
-{ "id": 1, "pid": 2, "gender": "male", "title": "Title", "name": "Father", "photo": "", "loc": "NY USA" },
-{ "id": 2, "pid": 1, "gender": "female", "title": "Title", "name": "Mother", "photo": "", "loc": "NY USA" },
+{ "id": 1, "pid": 2, "gender": "male", "title": "Title", "name": "Father", "photo": "", "addr": "NY", "cn":"us" },
+{ "id": 2, "pid": 1, "gender": "female", "title": "Title", "name": "Mother", "photo": "", "adddr": "NY" , "cn":"us"},
 { "id": 3, "pid": 4, "mid": 2, "fid": 1, "gender": "female", "title": "Title", "name": "Daughter",
-    "photo": "//unsplash.it/80/80", "loc": "USA" },
-{ "id": 4, "pid": 3, "gender": "male", "title": "Title", "name": "Son-in-Law","photo": "", "loc": "IND" },
+    "photo": "//unsplash.it/80/80", "addr": "USA" , "cn":"us"},
+{ "id": 4, "pid": 3, "gender": "male", "title": "Title", "name": "Son-in-Law","photo": "", "addr": "", "cn":"ca" },
 ];</code>
     </pre>
 
@@ -65,9 +65,9 @@ var jsonData = [
     name <i class="fa-solid fa-arrow-right"></i> name of family member - <span class="req">required</span>
     title <i class="fa-solid fa-arrow-right"></i> family name - optional
     photo <i class="fa-solid fa-arrow-right"></i> photo url (local / web) - optional
-    loc <i class="fa-solid fa-arrow-right"></i> address, 
-            if you have USA or IND in address it will be replaced by country flags.
-            (other countries <i class="fa-solid fa-person-walking-luggage fa-lg" style="color:greenyellow"></i> coming soon)
+    addr <i class="fa-solid fa-arrow-right"></i> address
+    cn <i class="fa-solid fa-arrow-right"></i> country code, refer to this link to find your country code <a href="https://flagcdn.com/en/codes.json" target="_blank">ISO 3166 Country Code</a>. 
+                        Note: No image will be shown if you use wrong code.
     pid <i class="fa-solid fa-arrow-right"></i> partner id  - (optional) *
     mid <i class="fa-solid fa-arrow-right"></i> mother id - (optional) *
     fid <i class="fa-solid fa-arrow-right"></i> father id - (optional) *
@@ -140,6 +140,14 @@ var jsonData = [
             </div>
         </div>
     </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZS8VFGJ58"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-EZS8VFGJ58');
+    </script>
 </body>
 
 </html>
