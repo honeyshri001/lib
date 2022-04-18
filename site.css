@@ -1,28 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,600");
+@import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Monoton&display=swap");
 * {
   box-sizing: border-box;
   margin-top: 0;
 }
-
+:root {
+  /* --gradient: linear-gradient(90deg, #ee6352, purple, #ee6352); */
+  --gradient: linear-gradient(90deg, green, gold, #ee6352);
+}
 body {
   font-family: "Poppins", sans-serif;
   color: rgb(8, 8, 8);
-  font-size: 1.1rem;
+  font-size: 1.25vw;
+  background-color: rgb(214, 206, 206);
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 6vw;
   color: #0f9;
+  padding: 10px;
   text-transform: uppercase;
   letter-spacing: 15px;
-  /* outline: 3px solid #0f9;
-  outline-offset: 0.25em; */
+  font-family: "Holtwood One SC", serif;
   border: 3px solid gold;
   display: inline-block;
   margin: 0.25em 0 0.5em;
   border-radius: 5px;
   box-shadow: 0 1.5rem 0 -1rem blue, 0 3rem 0 -2rem red, 0 4.5rem 0 -3rem purple;
+  background-color: #1f2020;
 }
+
 h1 span {
   font-weight: 300;
 }
@@ -36,49 +43,37 @@ h4 {
   margin-bottom: 0.5em;
 }
 p span {
-  color: #0f9;
+  color: goldenrod;
+  font-size: 2rem;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.7em 1.7em;
+  padding: 10px 50px;
   background: #0f9;
-  color: #444;
-  font-weight: 600;
+  color: #111;
   text-decoration: none;
   border-radius: 10px;
-  margin-bottom: 5px;
+  height: 35px;
+  width: 150px;
+  font-weight: bolder;
+  font-size: 12px;
+  box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
 }
 .btn:hover {
   background: #00cc7a;
 }
 .container {
   margin: 5px;
-  padding: 2vh 0;
-}
-pre {
-  /* box-shadow: 0 1.5rem 0 -1rem blueviolet, 0 3rem 0 -2rem tomato; */
-  box-shadow: 0 0 1rem 0 rgb(150, 104, 4);
-  background-color: #020202;
-}
-pre[class*="language-"] {
-  background: #020202 !important;
-}
-.hero {
-  text-align: center;
-  position: relative;
-  background-color: rgb(19, 18, 18);
-  height: 100vh;
-  padding: 0em;
-  color: #fff;
+  width: min(100% - 30px, 1200px);
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-
-  box-shadow: 0 1rem 0 -1rem tomato;
+  align-items: stretch;
+  flex-grow: 1;
 }
-.hero::before {
+.container::before {
   content: "";
   position: fixed;
   left: 0;
@@ -87,10 +82,34 @@ pre[class*="language-"] {
   z-index: -1;
   display: block;
   background-image: url(img/familytree.jpg);
-  background-blend-mode: multiply;
   background-size: cover;
   height: 100vh;
   opacity: 0.3;
+}
+pre {
+  /* box-shadow: 0 1.5rem 0 -1rem blueviolet, 0 3rem 0 -2rem tomato; */
+  box-shadow: 0 0 1rem 0 rgb(150, 104, 4);
+  background-color: #020202;
+  border-radius: 10px;
+}
+pre[class*="language-"] {
+  background: #020202 !important;
+}
+.hero {
+  text-align: center;
+  position: relative;
+
+  height: 100vh;
+  padding: 0em;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 1rem 0 -1rem tomato;
+  background-image: url(https://picsum.photos/id/1018/3264/2448);
+  background-size: cover;
 }
 
 .steps {
@@ -103,25 +122,51 @@ pre[class*="language-"] {
 .fa-regular {
   color: gold;
 }
-@media (min-width: 40rem) {
-  .steps {
-    flex-direction: column;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* On screens that are 992px or less */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: rgb(160, 160, 226);
+  }
+  .container::before {
+    content: "";
+    background: rgb(194, 194, 247);
+  }
+  .scroll {
+    opacity: 0;
+  }
+  .cta {
+    margin-top: 2px;
   }
 }
-.step {
-  flex-basis: 30%;
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: rgb(247, 247, 110);
+  }
 }
+
 .scroll {
   position: absolute;
-  top: 500px;
+  top: 75%;
+  color: goldenrod;
+}
+.scroll p {
+  color: goldenrod;
 }
 .chevron {
   position: relative;
-  width: 28px;
-  height: 8px;
+  width: 20px;
+  height: 4px;
   opacity: 0;
   transform: scale3d(0.5, 0.5, 0.5);
   animation: move 3s ease-out infinite;
+  color: goldenrod;
 }
 
 .chevron:first-child {
@@ -177,7 +222,7 @@ pre[class*="language-"] {
   margin-left: -30px;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   font-size: 12px;
-  color: #fff;
+  color: goldenrod;
   text-transform: uppercase;
   white-space: nowrap;
   opacity: 0.25;
@@ -197,6 +242,7 @@ pre[class*="language-"] {
   display: flex;
   justify-content: flex-start;
   margin-top: 80px;
+  border-radius: 10px;
 }
 
 .code-inst {
@@ -227,7 +273,8 @@ pre[class*="language-"] {
   box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.2);
   display: grid;
   grid-column: auto;
-  grid-template-columns: 200px auto;
+  /* grid-template-columns: 200px auto; */
+  grid-template-columns: minmax(150px, 1fr) 3fr;
   gap: 50px 50px;
   padding: 1.5rem;
   margin: 10px;
@@ -238,4 +285,54 @@ pre[class*="language-"] {
 }
 .card img {
   border-radius: 10px;
+}
+@-webkit-keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+h1 {
+  /* font-size: 5rem; */
+  font-weight: 900;
+  color: rgb(247, 173, 14);
+
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: rgb(63, 61, 61);
+  --stroke-color: rgb(228, 228, 222);
+
+  text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color),
+    calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke))
+      0px var(--stroke-color);
+}
+/* for browsers that support spread, added in
+  https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
+  currently: none browsers! none of them!
+  I can't even find a test: 
+  https://wpt.fyi/results/css/css-text-decor */
+@supports (text-shadow: 1px 1px 1px 1px black) {
+  h1 {
+    text-shadow: var(--x-offset) var(--y-offset) 0px 0px var(--background-color),
+      var(--x-offset) var(--y-offset) var(--stroke) 0px var(--stroke-color);
+  }
 }
