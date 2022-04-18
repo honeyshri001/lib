@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Monoton&display=swap");
 * {
   box-sizing: border-box;
-  margin-top: 10; 
+  margin-top: 10px; 
 }
 :root {
   /* --gradient: linear-gradient(90deg, #ee6352, purple, #ee6352); */
