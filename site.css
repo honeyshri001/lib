@@ -61,11 +61,9 @@ p span {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
   background: #0f9;
   font-size: 15px;
-
+  clear: both;
 }
 
 .btn:hover {
@@ -258,8 +256,7 @@ a {
       rgb(80, 79, 78) 100%);
   padding: 10px;
   color: #fff;
-  display: flex;
-  justify-content: flex-start;
+
   margin-top: 80px;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
@@ -290,6 +287,15 @@ a {
   font-style: italic;
 }
 
+.cta-text {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px;
+
+}
+
 .card {
 
   display: grid;
@@ -298,6 +304,8 @@ a {
   gap: 50px 50px;
   padding: 1.5rem;
   margin: 10px;
+  border-bottom: 2px solid #ccc;
+  width: min(85vw -30px, 60vw);
 }
 
 .card-text {
@@ -397,6 +405,7 @@ input[type=email] {
   border-radius: 5px;
   background-color: #4e4b4b;
   padding: 20px;
+  width: 60%;
 }
 
 @media screen and (max-width: 992px) {
@@ -412,6 +421,10 @@ input[type=email] {
 
   .cta {
     margin-top: 2px;
+  }
+
+  .contact-form {
+    width: 100%;
   }
 }
 
