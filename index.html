@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="JavaScript Library to generate Family Tree">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="ShriHari">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="JavaScript Library to generate Family Tree" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="ShriHari" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Build Family Tree</title>
-    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-tomorrow.min.css"
         integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,21 +27,26 @@
     <div class="container">
         <div class="hero">
             <p><span>Build your</span></p>
-            <h1> Family Tree<br /> <img class="syn" src="img/synonym-blk.jpg" /></h1>
-            <p><span>In <strong>3 Simple</strong> steps</span></p>
+            <h1>
+                Family Tree<br />
+                <img class="syn" src="img/synonym-blk.jpg" />
+            </h1>
+            <p>
+                <span>In <strong>3 Simple</strong> steps</span>
+            </p>
 
             <div class="scroll">
                 <span class="text">Scroll down</span>
                 <div class="chevron"></div>
                 <div class="chevron"></div>
                 <div class="chevron"></div>
-
             </div>
-
         </div>
         <div class="steps">
             <div class="step">
-                <h2>Step 1: Add below script to your <strong>&lt;Head&gt;</strong> tag</h2>
+                <h2>
+                    Step 1: Add below script to your <strong>&lt;Head&gt;</strong> tag
+                </h2>
                 <pre
                     class="language-markup"><code >&lt;script src="https://shrihari-lib.netlify.app/lineage.min.js"/&gt;</code></pre>
             </div>
@@ -57,7 +62,6 @@ var jsonData = [
 { "id": 4, "pid": 3, "gender": "male", "title": "Title", "name": "Son-in-Law","photo": "", "addr": "", "cn":"ca" },
 ];</code>
     </pre>
-
             </div>
             <div class="step">
                 <h3>Here are the details of Data</h3>
@@ -100,22 +104,20 @@ var jsonData = [
             </div>
         </div>
 
-
         <div class="cta">
             <div class="cta-text">
                 <h2>Features</h2>
                 <div class="card">
-                    <img src="img/search.png" alt="search">
+                    <img src="img/search.png" alt="search" />
                     <div class="card-text">
                         <h4><b>Search</b></h4>
                         <p>Search any family member with photo</p>
                         <p>select and see the decendends (if any)</p>
                         <p>Enable / Disable by setting true/false in params</p>
-
                     </div>
                 </div>
                 <div class="card">
-                    <img src="img/node.png" alt="node">
+                    <img src="img/node.png" alt="node" />
                     <div class="card-text">
                         <h4><b>Click on Member</b></h4>
                         <p>To see the bloodline (if any)</p>
@@ -123,33 +125,60 @@ var jsonData = [
                 </div>
                 <div class="card">
                     <div>
-                        <img src="img/nodeabove.png" alt="Avatar"><br />
-                        <img src="img/nodeabove2.png" alt="Avatar">
+                        <img src="img/nodeabove.png" alt="Avatar" /><br />
+                        <img src="img/nodeabove2.png" alt="Avatar" />
                     </div>
                     <div class="card-text">
                         <h4><b>Lineage</b></h4>
-                        <p>When you see this icon it means this member has family members above.</p>
+                        <p>
+                            When you see this icon it means this member has family members
+                            above.
+                        </p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <a href="demo.html" target="_blank" class="btn">Demo <i
-                            class="fa-solid fa-arrow-up-right-from-square" style="color:darkblue"></i></a>
-                    <div class="card-text">
+                    <div style="grid-column: 1 / span 2;">
+                        <a href="demo.html" target="_blank" class="btn">Demo
+                            <i class="fa-solid fa-arrow-up-right-from-square" style="color: darkblue"></i></a>
+
                         <h4><b>Have Questions ?</b></h4>
-                        <p>send your queries to <a href="mailto:reachme@sridhar.ch">reachme@sridhar.ch</a></p>
+                        <p>
+                            send your queries to
+                            <a href="mailto:reachme@sridhar.ch">reachme@sridhar.ch</a>
+                        </p>
+                        <div class="contact-form">
+                            <form name="contact" method="POST" netlify-honeypot="bot-field"
+                                data-netlify-recaptcha="true" data-netlify="true">
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" name="Full Name" placeholder="Your name.." />
+
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your email.." />
+
+                                <label for="subject">Subject</label>
+                                <textarea id="subject" name="subject"
+                                    placeholder="Your query / Suggetion / feedback..anything"
+                                    style="height: 200px"></textarea>
+
+                                <input type="submit" value="Submit" />
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZS8VFGJ58"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-EZS8VFGJ58');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-EZS8VFGJ58");
     </script>
 </body>
 
