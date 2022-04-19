@@ -50,7 +50,7 @@ p span {
 }
 
 .btn {
-  display: inline-block;
+  /* display: inline-block;
   padding: 10px 50px;
   background: #0f9;
   color: #111;
@@ -60,7 +60,17 @@ p span {
   width: 150px;
   font-weight: bolder;
   font-size: 12px;
-  box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2); */
+  width: 150px; 
+  padding: 10px 30px;
+  border: 1px solid #ccc; 
+  border-radius:5px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  background: #0f9;
+  font-size: 15px;
+  
 }
 .btn:hover {
   background: #00cc7a;
