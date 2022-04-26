@@ -140,6 +140,7 @@ pre {
 }
 .card:last-child {
   border-width: 0;
+  display: inline-block;
 }
 .card > * {
   flex-basis: 100%;
