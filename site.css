@@ -17,6 +17,8 @@ img {
   max-width: 80%;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
 }
 h1,
 h2,
@@ -70,6 +72,8 @@ h4 {
   padding: 30px;
   outline: 3px solid rgb(223, 219, 219);
   border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
   background-color: rgb(75, 42, 42);
 }
 .hero {
@@ -81,6 +85,8 @@ h4 {
   text-align: center;
   background-color: #cac5c5;
   border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
 }
 
 .hero img {
@@ -92,6 +98,8 @@ article {
 }
 pre {
   border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   background-color: #020202 !important;
 }
@@ -149,6 +157,8 @@ pre {
   text-decoration: none;
   color: #cac5c5;
   border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
   border: 2px solid greenyellow;
 }
 .card img {
@@ -239,15 +249,7 @@ input[type="submit"]:hover {
 label {
   color: aliceblue;
 }
-/* @media screen and (max-width: 825px) {
-  html,
-  body {
-    min-width: 320px;
-  }
-  .card {
-    grid-auto-flow: row;
-  }
-} */
+
 @media (min-width: 40em) {
   .card {
     flex-direction: row;
